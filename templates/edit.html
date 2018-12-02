@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Edit
+{% endblock %}
+
+{% block main %}
+    <h3>Edit your hike</h3>
+    <form action="/add" method="post" enctype=multipart/form-data span class="border"><br>
+         <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="hike" type="text" value="{{ hike["hike"] }}">
+        </div>
+        <div class="form-group">
+            <textarea class="form-control" autofocus class="form-control" name="description" rows="4" placeholder="{{ hike["description"] }}"></textarea>
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" class="form-control" name="country" type="text" value="{{ hike["country"] }}">
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" class="form-control" name="state" type="text" value="{{ hike["state"] }}">
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" class="form-control" name="town" type="text" value="{{ hike["town"] }}">
+        </div>
+        <div class="form-group">
+                <select class="form-control" style="width:210px"  autofocus class="form-control" widthname="rating" name="rating" type="text">
+                  <option selected>"{{ hike["rating"] }}"</option>
+                  <option>Excellent</option>
+                  <option>Good</option>
+                  <option>Average</option>
+                  <option>Poor</option>
+                  <option>Bad</option>
+                </select>
+        </div>
+        <div class="form-group">
+                <select class="form-control" style="width:210px" autofocus class="form-control" name="difficulty" type="text" value={{ hike["difficulty"] }}>
+                      <option selected>"{{ hike["difficulty"] }}"</option>
+                      <option>Treachorous</option>
+                      <option>Difficult</option>
+                      <option>Challenging</option>
+                      <option>Brisk</option>
+                      <option>Easy</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+        </div>
+    <img src="/static/{{ hike["image"] }}">
+    <h4>Upload new File</h4>
+      <p><input type=file name=file>
+        <button class="btn btn-primary" type="submit">Update</button>
+       </span>
+
+    </form>
+{% endblock %}

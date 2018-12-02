@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    View Hikes
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Hike</th>
+                <th>Description</th>
+                <th>Country</th>
+                <th>State</th>
+                <th>Town</th>
+                <th>Rating</th>
+                <th>Difficulty</th>
+                <th>Image</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for hike in hikes %}
+                <tr>
+                    <td>{{ hike.hike }}</td>
+                    <td>{{ hike.description }}</td>
+                    <td>{{ hike.country}}</td>
+                    <td>{{ hike.state }}</td>
+                    <td>{{ hike.town }}</td>
+                    <td>{{ hike.rating}}</td>
+                    <td>{{ hike.difficulty }}</td>
+                    <td><img src = "/static/{{ hike.image }}"></td>
+                    <td><a href={{ hike.edit }}>Edit</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add
+{% endblock %}
+
+{% block main %}
+    <h3>Go ahead and add your hike</h3>
+    <form action="/add" method="post" enctype=multipart/form-data span class="border"><br>
+         <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="hike" placeholder="Hike Name" type="text">
+        </div>
+        <div class="form-group">
+            <textarea class="form-control" autofocus class="form-control" name="description" placeholder="Enter 2-3 sentences describing the hike" rows="4"></textarea>
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" class="form-control" name="country" placeholder="Country" type="text">
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" class="form-control" name="state" placeholder="State" type="text">
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" class="form-control" name="town" placeholder="Nearest Town" type="text">
+        </div>
+        <div class="form-group">
+                <select class="form-control" style="width:210px"  autofocus class="form-control" widthname="rating" name="rating" type="text">
+                  <option selected>Rate Hike</option>
+                  <option>Excellent</option>
+                  <option>Good</option>
+                  <option>Average</option>
+                  <option>Poor</option>
+                  <option>Bad</option>
+                </select>
+        </div>
+        <div class="form-group">
+                <select class="form-control" style="width:210px" autofocus class="form-control" name="difficulty" type="text">
+                      <option selected>Rate Difficulty</option>
+                      <option>Treachorous</option>
+                      <option>Difficult</option>
+                      <option>Challenging</option>
+                      <option>Brisk</option>
+                      <option>Easy</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+        </div>
+    <title>Upload new File</title>
+    <h1>Upload new File</h1>
+      <p><input type=file name=file>
+        <button class="btn btn-primary" type="submit">Add</button>
+       </span>
+
+    </form>
+{% endblock %}
